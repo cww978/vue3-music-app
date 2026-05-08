@@ -6,7 +6,7 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "dev": "electron-vite --watch",
+    "dev": "electron-vite dev",
     "build": "electron-vite build",
     "start": "electron-vite preview",
     "build:unpacked": "electron-builder --dir --publish never --config electron.builder.config.json",
