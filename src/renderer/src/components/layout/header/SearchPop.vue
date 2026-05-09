@@ -1,7 +1,7 @@
 <template>
   <el-popover popper-style="max-width:auto;padding:0;" v-model:visible="showSearchView" width="250px">
     <template #reference>
-      <ElInput placeholder="搜索音乐、MV、歌单"
+      <ElInput class="search-input" placeholder="搜索音乐、MV、歌单"
                :prefix-icon="Search"
                clearable
                @input="searchInput"
@@ -61,6 +61,11 @@ onMounted(async () => {
 })
 
 </script>
-<style lang="scss">
-
+<style lang="scss" scoped>
+.search-input {
+  @apply rounded-full text-xs;
+}
+.search-input :deep(.el-input__wrapper) {
+  @apply bg-slate-100 dark:bg-stone-900;
+}
 </style>

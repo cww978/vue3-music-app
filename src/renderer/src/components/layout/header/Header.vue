@@ -30,13 +30,15 @@ const iconSize = 22;
 
 const router = useRouter();
 
-const {showSearchView, searchKeyword} = storeToRefs(useSearchStore())
-
 const mode = ref(false)
 
 const changeThemeMode = () => {
-  window.document.documentElement.setAttribute('data-theme', mode.value ? 'dark' : 'light')
-
+  const html = window.document.documentElement;
+  if (mode.value) {
+    html.classList.add('dark');
+  } else {
+    html.classList.remove('dark');
+  }
   mode.value = !mode.value;
 }
 
